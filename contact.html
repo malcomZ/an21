@@ -10,7 +10,7 @@
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light bg-custom">
                 <a class="navbar-brand" href="#">My WebSite</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -73,6 +73,9 @@
                 </div>
             </div>
             </div>
+            <audio controls id="audio">
+                <source src="assets/song/coffin_dance.mp3" type="audio/mp3">
+            </audio>
         </div>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -87,6 +90,8 @@
             function myCaptcha(e) {
                 e = e || window.event;
                 e.preventDefault();
+                var myAudio = document.getElementById("audio");
+                myAudio.play();
                 $('#modal').modal('show');
                 var captchaResult = document.getElementById("captcha").value;
                 var a = document.getElementById("a").innerHTML;
@@ -99,6 +104,10 @@
                 }
                 document.getElementById("result").innerHTML = text;
             }
+            $('#modal').on('hidden.bs.modal', function (e) {
+                var myAudio = document.getElementById("audio");
+                myAudio.pause();
+            })
         </script>
     </body>
 </html>

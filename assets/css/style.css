@@ -2,18 +2,31 @@
     box-sizing: border-box;
 }
 
+.bg-custom {
+    background-color: #dedfe0 !important;
+}
+
 footer {
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 60px;
     line-height: 60px;
-    background-color: #f8f9fa;
+    background-color: #dedfe0;
     padding: 0 10%;
 }
 
 main .row, form {
     margin-top: 3rem;
+}
+
+.author:hover {
+    color: red;
+    letter-spacing: .2rem;
+}
+
+.author {
+    transition: 1s;
 }
 
 #captcha {
