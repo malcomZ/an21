@@ -12,10 +12,20 @@ footer {
     padding: 0 10%;
 }
 
-main .row {
+main .row, form {
     margin-top: 3rem;
 }
 
+#captcha {
+    max-width: 60px;
+}
+.operator{
+    margin: 0 1rem;
+}
+
 @media (max-width: 576px) { 
-    h1 {font-size: 2rem};
+    h1 {font-size: 2rem}
+    #captcha{
+        margin: 0 1rem;
+    }
 }
